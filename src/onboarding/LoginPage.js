@@ -7,18 +7,14 @@ import {
 import { StatusBar } from "expo-status-bar";
 import { LinearGradient } from "expo-linear-gradient";
 
-const LoginPage = () => {
-
-  const navigateToPhoneInput = () =>{
-    
-  }
-
+const LoginPage = ({navigation}) => {
+  
   return (
     <View className="flex-1 flex justify-end">
       <StatusBar style="light" />
       <Image
-        className="h-full w-full absolute"
-        source={require("../assets/welcomeImg.png")}
+        className="absolute h-full w-full"
+        source={require("../../assets/welcomeImg.png")}
       />
 
       <LinearGradient
@@ -35,7 +31,7 @@ const LoginPage = () => {
         </View>
         <View style={styles.container}>
           <TouchableOpacity style={styles.button}>
-            <Text style={styles.text} onPress={()=>navigateToPhoneInput()}>Login with Phone Number</Text>
+            <Text style={styles.text} onPress={() => navigation.navigate('MobileInput')}>Login with Phone Number</Text>
           </TouchableOpacity>
         </View>
 
